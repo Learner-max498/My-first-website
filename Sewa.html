@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Adesewa ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f9d6e4, #ffe5f0);
+            text-align: center;
+            padding: 20px;
+            color: #333;
+            position: relative;
+        }
+        h2 {
+            color: #d6336c;
+        }
+        p {
+            font-size: 18px;
+        }
+        img {
+            width: 250px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+        .apology {
+            background: #fff0f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background: #e63950;
+        }
+        /* Heart animation */
+        .heart {
+            position: fixed;
+            top: -10px;
+            color: red;
+            font-size: 20px;
+            z-index: 1000;
+            animation: sparkle 0.8s ease-in-out, fall linear;
+            animation-duration: 0.8s, var(--fall-time);
+            animation-delay: 0s, 0.8s;
+        }
+        @keyframes sparkle {
+            0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(20deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Welcome, Adesewa ❤️</h2>
+    <p>Hope you've been doing great 🌸</p>
+    <p><i>For you</i></p>
+
+    <img src="https://i.postimg.cc/YCngchT7/IMG-20250729-WA0026.jpg" alt="Adesewa's Picture">
+    <img src="https://i.postimg.cc/gc7z0bcJ/IMG-20250811-WA0001.jpg">
+
+    <div class="apology">
+        <p><strong>Dear Adesewa,</strong></p>
+        <p>I know I broke a promise I made to you.</p>
+        <p>Sorry for not showing you the drawing, I have been busy lately.</p>
+        <p>You mean more to me than I can express in words.</p>
+        <p>— Truly Sorry ❤️</p>
+    </div>
+
+    <button onclick="playMusic()">Click Me</button>
+
+    <!-- Background music -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/audio/2021/09/06/audio_3c6e4b7c7d.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            const fallTime = (Math.random() * 2 + 3) + 's';
+            heart.style.setProperty('--fall-time', fallTime);
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+
+        function playMusic() {
+            document.getElementById('bgMusic').play();
+            alert('I hope this makes you smile 😊');
+        }
+    </script>
+
+</body>
+</html>
